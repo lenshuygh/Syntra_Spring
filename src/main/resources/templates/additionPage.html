@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelead.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Addition</title>
+</head>
+<body>
+<form>
+    <input type="text" name="first_number" th:value="${param.first_number}"/>
+    +
+    <input type="text" name="second_number" th:value="${param.second_number}"/>
+    <input type="submit" value="=">
+    <input type="text" th:value="${additionresult}"/>
+</form>
+</body>
+</html>
