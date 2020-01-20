@@ -3,6 +3,7 @@ package be.lens.spring.baeldung_tutorial.contoller;
 import be.lens.spring.baeldung_tutorial.model.Address;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,7 +16,7 @@ public class AddressController {
     }
 
     @PostMapping
-    public String processAddress(Address address){
+    public String processAddress(@ModelAttribute("address") Address address){
         return "addressDetail";
     }
 }
