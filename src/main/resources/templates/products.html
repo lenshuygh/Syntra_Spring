@@ -8,8 +8,8 @@
 <form th:each="product,status : ${products}">
     <input type="text" name="productField" th:value="${product}"/>
     <input type="hidden" name="productIndex" th:value="${status.index}">
-    <input type="submit" value="del" formmethod="post"/>
-    <input type="submit" value="change" formmethod="post"/>
+    <input type="submit" value="del" formmethod="post" name="action"/>
+    <input type="submit" value="change" formmethod="post" name="action"/>
 </form>
 </body>
 </html>
