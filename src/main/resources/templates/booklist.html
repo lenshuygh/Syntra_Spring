@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>BookList</h1>
-    <ul th:each="book : ${books}">
-        <li>
-            <a href="detail" th:href="@{bookDetail(isbn=${book.isbn})}" th:text="${book.title}">bookDetail</a>
-        </li>
-    </ul>
+<ul th:each="book : ${books}">
+    <li>
+        <a href="detail" th:href="@{bookDetail(isbn=${book.isbn})}" th:text="${book.title}">bookDetail</a>
+    </li>
+</ul>
 </body>
 </html>

@@ -18,14 +18,14 @@ public class BookController {
     BookRepository bookRepository;
 
     @RequestMapping("books")
-    public ModelAndView getBookList(){
+    public ModelAndView getBookList() {
         final List<Book> books = bookRepository.getBooks();
-        return new ModelAndView("booklist","books", books);
+        return new ModelAndView("booklist", "books", books);
     }
 
     @RequestMapping("bookDetail")
-    public ModelAndView getBookDetail(@RequestParam("isbn") String isbn){
+    public ModelAndView getBookDetail(@RequestParam("isbn") String isbn) {
         Book book = bookRepository.getBook(isbn);
-        return new ModelAndView("bookDetails", "book",book);
+        return new ModelAndView("bookDetails", "book", book);
     }
 }
