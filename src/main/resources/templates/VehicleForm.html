@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Form</title>
+</head>
+<body>
+<h1>Registration of a new vehicle</h1>
+<form method="post" th:object="${registration}">
+    <table>
+        <tr>
+            <td> Brand:</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Type:</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Year:</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Fuel:</td>
+            <td>
+                <div th:each="s: ${T(be.lens.spring.baeldung_tutorial.model.Fuel).values()}">
+                    <label th:for="${#ids.next('fuel')}" th:text="${s}"/>
+                    <input type="radio" th:field="*{fuel}" th:value="${s}"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td> Power (kW):</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Transmission:</td>
+            <td>
+                <div th:each="s: ${T(be.lens.spring.baeldung_tutorial.model.Transmission).values()}">
+                    <label th:for="${#ids.next('transmission')}" th:text="${s}"/>
+                    <input type="radio" th:field="*{transmission}" th:value="${s}"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td> TowBar:</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Options:</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Date entry into service (dd/mm/yyyy):</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Plate (D-XXX-DDD):</td>
+            <td><input/></td>
+        </tr>
+        <tr>
+            <td> Price:</td>
+            <td><input/> €</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Register"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
