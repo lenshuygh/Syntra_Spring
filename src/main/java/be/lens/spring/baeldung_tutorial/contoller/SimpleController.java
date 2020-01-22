@@ -12,8 +12,8 @@ public class SimpleController {
     String appName;
 
     @GetMapping("/")
-    public String homePage(Model model){
-        model.addAttribute("appName",appName);
+    public String homePage(Model model) {
+        model.addAttribute("appName", appName);
         return "home";
     }
 }

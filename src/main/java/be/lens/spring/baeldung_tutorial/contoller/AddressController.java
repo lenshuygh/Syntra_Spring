@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/address")
 public class AddressController {
     @GetMapping
-    public String displayForm(){
+    public String displayForm() {
         return "address";
     }
 
     @PostMapping
-    public String processAddress(@ModelAttribute("address") Address address){
+    public String processAddress(@ModelAttribute("address") Address address) {
         return "addressDetail";
     }
 }

@@ -2,8 +2,6 @@ package be.lens.spring.baeldung_tutorial.contoller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.context.annotation.ApplicationScope;
-import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,18 +14,18 @@ public class CounterController {
     private int count = 0;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         System.out.println("CounterController : init()");
     }
 
     @PreDestroy
-    public void destroy(){
+    public void destroy() {
         System.out.println("CounterController : destroy()");
     }
 
     @RequestMapping("counter")
-    protected ModelAndView handle(){
-        return new ModelAndView("counterView","count",++count);
+    protected ModelAndView handle() {
+        return new ModelAndView("counterView", "count", ++count);
     }
 
 }

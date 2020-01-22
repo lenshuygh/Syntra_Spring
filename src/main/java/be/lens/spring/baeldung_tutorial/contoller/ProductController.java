@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,30 +22,30 @@ public class ProductController {
     }
 
     @ModelAttribute("products")
-    public List<String> getProducts(){
+    public List<String> getProducts() {
         return products;
     }
 
     @GetMapping("/products")
-    public String products(){
+    public String products() {
         return "products";
     }
 
-    @PostMapping(value = "/products",params = "action=change")
-    public ModelAndView productChange(@RequestParam("productField") String product,@RequestParam("productIndex") int index){
+    @PostMapping(value = "/products", params = "action=change")
+    public ModelAndView productChange(@RequestParam("productField") String product, @RequestParam("productIndex") int index) {
         //products[index] = product;
-        this.products.set(index,product);
+        this.products.set(index, product);
         return new ModelAndView("products");
     }
 
-    @PostMapping(value = "/products",params = "action=del")
-    public ModelAndView productDelete(@RequestParam("productField") String product,@RequestParam("productIndex") int index) {
+    @PostMapping(value = "/products", params = "action=del")
+    public ModelAndView productDelete(@RequestParam("productField") String product, @RequestParam("productIndex") int index) {
         products.remove(index);
         return new ModelAndView("products");
     }
 
-    @PostMapping(value = "/products",params = "add")
-    public ModelAndView productAdd(@RequestParam("newProduct") String newProduct){
+    @PostMapping(value = "/products", params = "add")
+    public ModelAndView productAdd(@RequestParam("newProduct") String newProduct) {
         products.add(newProduct);
         return new ModelAndView("products");
     }

@@ -18,9 +18,9 @@ public class BookRepositoryImpl implements BookRepository {
         book.setTitle("Java Self Help");
         book.setAuthor("Lens Huygh");
         book.setPrice(20f);
-        this.bookMap.put(book.getIsbn(),book);
-        Book book2 = new Book("1000","Java For Non Dummies","Steve",40f);
-        this.bookMap.put(book2.getIsbn(),book2);
+        this.bookMap.put(book.getIsbn(), book);
+        Book book2 = new Book("1000", "Java For Non Dummies", "Steve", 40f);
+        this.bookMap.put(book2.getIsbn(), book2);
     }
 
     @Override

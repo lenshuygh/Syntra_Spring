@@ -10,12 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/addition")
 public class AdditionController {
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView addNumbers(@RequestParam("first_number") int num1,@RequestParam("second_number") int num2){
-        return new ModelAndView("additionPage","additionresult",num1 + num2);
+    public ModelAndView addNumbers(@RequestParam("first_number") int num1, @RequestParam("second_number") int num2) {
+        return new ModelAndView("additionPage", "additionresult", num1 + num2);
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String displayForm(){
+    public String displayForm() {
         return "additionPage";
     }
 
