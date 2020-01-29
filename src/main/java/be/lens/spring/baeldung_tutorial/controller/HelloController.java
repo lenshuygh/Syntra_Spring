@@ -1,4 +1,4 @@
-package be.lens.spring.baeldung_tutorial.contoller;
+package be.lens.spring.baeldung_tutorial.controller;
 
 import be.lens.spring.baeldung_tutorial.service.Hello;
 import org.springframework.beans.factory.annotation.Autowired;

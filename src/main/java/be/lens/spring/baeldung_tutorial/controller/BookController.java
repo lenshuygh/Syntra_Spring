@@ -1,7 +1,7 @@
-package be.lens.spring.baeldung_tutorial.contoller;
+package be.lens.spring.baeldung_tutorial.controller;
 
 import be.lens.spring.baeldung_tutorial.model.Book;
-import be.lens.spring.baeldung_tutorial.repository.BookRepository;
+import be.lens.spring.baeldung_tutorial.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,17 +14,17 @@ import java.util.List;
 public class BookController {
 
     @Autowired
-    BookRepository bookRepository;
+    BookService bookService;
 
     @RequestMapping("books")
     public ModelAndView getBookList() {
-        final List<Book> books = bookRepository.getBooks();
+        final List<Book> books = bookService.getAllBooks();
         return new ModelAndView("booklist", "books", books);
     }
 
     @RequestMapping("bookDetail")
     public ModelAndView getBookDetail(@RequestParam("isbn") String isbn) {
-        Book book = bookRepository.getBook(isbn);
+        Book book = bookService.getBookByIsbn(isbn);
         return new ModelAndView("bookDetails", "book", book);
     }
 }

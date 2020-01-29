@@ -1,4 +1,4 @@
-package be.lens.spring.baeldung_tutorial.contoller;
+package be.lens.spring.baeldung_tutorial.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
